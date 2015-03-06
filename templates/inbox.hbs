@@ -1,7 +1,11 @@
-<h3>Emails</h3>
+<h3>{{model.user}}'s Inbox</h3>
 
-<ul>
-  {{#each email in model}}
+{{#each email in model.emails}}
+  <ul>
     <li>{{#link-to 'email' email}}{{email.subject}}{{/link-to}}</li>
-  {{/each}}
-</ul>
+  </ul>
+{{/each}}
+
+{{#link-to 'new-email'}}Compose{{/link-to}}
+
+{{outlet}}

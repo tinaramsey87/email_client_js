@@ -12,6 +12,14 @@ Email.NewEmailController = Ember.Controller.extend({
       this.set('subject', null);
       this.set('body', null);
       newEmail.save();
+
+      var inbox = this.get('controllers.inbox.model');
+
+      inbox.get('emails').pushObject(newEmail);
+      inbox.save();
+      alert('Email sent!');
+
+      this.transitionToRoute('inbox', inbox);
     }
   }
 });

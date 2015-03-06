@@ -1,5 +1,5 @@
 Email.InboxRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find('inbox');
+  model: function(params) {
+    return this.store.find('inbox', params.inbox_id);
   }
 });
