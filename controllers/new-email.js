@@ -7,7 +7,8 @@ Email.NewEmailController = Ember.Controller.extend({
         sender: this.get('sender'),
         recipient: this.get('recipient'),
         subject: this.get('subject'),
-        body: this.get('body')
+        body: this.get('body'),
+        when: new Date
       });
       this.set('sender', null);
       this.set('recipient', null);

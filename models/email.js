@@ -3,5 +3,7 @@ Email.Email = DS.Model.extend({
   recipient: DS.attr(),
   subject: DS.attr(),
   body: DS.attr(),
-  inbox: DS.belongsTo('inbox', {async: true})
+  when: DS.attr(),
+  inbox: DS.belongsTo('inbox', {async: true}),
+  folder: DS.belongsTo('folder', {async: true})
 });
