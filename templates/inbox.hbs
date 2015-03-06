@@ -1,0 +1,7 @@
+<h3>Emails</h3>
+
+<ul>
+  {{#each email in model}}
+    <li>{{#link-to 'email' email}}{{email.subject}}{{/link-to}}</li>
+  {{/each}}
+</ul>
