@@ -5,5 +5,7 @@ Email.Router.map(function() {
   this.resource('inbox', {path: ':inbox_id'}, function() {
     this.resource('new-email');
     this.resource('email', {path: ':email_id'});
+    this.resource('folder', {path: ':folder_id'});
   });
+  this.resource('new-folder');
 });

@@ -1,4 +1,7 @@
 Email.NewEmailController = Ember.Controller.extend({
+  isComposing: true,
+  mailSent: false,
+
   needs: ['inbox'],
 
   actions: {
@@ -20,9 +23,16 @@ Email.NewEmailController = Ember.Controller.extend({
 
       inbox.get('emails').pushObject(newEmail);
       inbox.save();
-      alert('Email sent!');
+      this.set('mailSent', true);
+      this.set('isComposing', false);
+    },
 
-      this.transitionToRoute('inbox', inbox);
+    reset: function() {
+      this.set('mailSent', false);
+    },
+
+    composeMail: function() {
+      this.set('isComposing', true);
     }
   }
 });

@@ -10,3 +10,25 @@
 .jumbotron {
   max-height: 230px;
 }
+
+.input-group {
+  max-width: 550px;
+  margin-top: 5px;
+}
+
+.form-group {
+  max-width: 550px;
+  margin-top: 5px;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 3px;
+}

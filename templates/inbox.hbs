@@ -1,11 +1,35 @@
 <h3>{{model.user}}'s Inbox</h3>
 
-{{#each email in model.emails}}
-  <ul>
-    <li>{{#link-to 'email' email}}{{email.subject}}{{/link-to}}</li>
-  </ul>
-{{/each}}
+<h4>Sent Mail</h4>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Sent by</th>
+      <th>Subject</th>
+      <th>Folder</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each email in model.emails}}
+    <tr>
+      <td>{{#link-to 'email' email}}<span class="glyphicon glyphicon-plus"></span>{{/link-to}}</td>
+      <td>{{email.sender}}</td>
+      <td>{{email.subject}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
 
-{{#link-to 'new-email'}}Compose{{/link-to}}
+<ul>
+  {{#each folder in model.folders}}
+  <li>{{#link-to 'folder' folder}}{{folder.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+
+{{#link-to 'new-email'}}<button class="btn btn-info"><label {{action 'composeMail'}}>Compose Mail</label></button>{{/link-to}}
+
+{{#link-to 'new-folder'}}<button class="btn btn-warning"><label>New Folder</label></button>{{/link-to}}
 
 {{outlet}}
