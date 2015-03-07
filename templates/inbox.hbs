@@ -16,11 +16,13 @@
       <td>{{#link-to 'email' email}}<span class="glyphicon glyphicon-plus"></span>{{/link-to}}</td>
       <td>{{email.sender}}</td>
       <td>{{email.subject}}</td>
+      <td>No folder</td>
     </tr>
     {{/each}}
   </tbody>
 </table>
 
+<h4>Inbox Folders</h4>
 <ul>
   {{#each folder in model.folders}}
   <li>{{#link-to 'folder' folder}}{{folder.title}}{{/link-to}}</li>

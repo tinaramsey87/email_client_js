@@ -1,0 +1,9 @@
+<h3>Select User | {{#link-to 'new-inbox'}}Add User{{/link-to}}</h3>
+
+<ul>
+  {{#each inbox in model}}
+    <li>{{#link-to 'inbox' inbox}}{{inbox.user}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

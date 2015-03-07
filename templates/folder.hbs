@@ -1,0 +1,6 @@
+<h3>Messages in {{model.title}}</h3>
+<ul>
+  {{#each email in model.emails}}
+    <li>{{email.sender}} | {{email.subject}}</li>
+  {{/each}}
+</ul>
