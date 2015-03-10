@@ -29,10 +29,12 @@ Email.NewEmailController = Ember.Controller.extend({
 
     reset: function() {
       this.set('mailSent', false);
+      this.set('isComposing', true);
+      this.transitionTo('inbox');
     },
 
-    composeMail: function() {
-      this.set('isComposing', true);
-    }
+    // composeMail: function() {
+    //   this.set('isComposing', true);
+    // }
   }
 });
